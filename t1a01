@@ -1,0 +1,10 @@
+<h5>Version. 0.10</h5>
+
+<h1 allgn=center>T1A01-Basic-web-page-by-Fred</h1>
+
+<input typre=button value="0. Pseudo Code" onclick="{document.getElementById('myDiv01').innerHTML= 'Hello World'}">
+
+<input type=buttom value="1. Input/Output" onclik="{document.getElementById('myDiv01).innerHTML = 'Input adffgdsfsgsdfdfg<br>'}">+'sdfg<br>sdfg<br>output is...'}">
+
+<div id="myDiv01">...</div>
+

@@ -33,4 +33,9 @@
 "><br>
 
 <input type=button value="Go left" onclick"{
-document.
+   document.getElementById('myImage01).style.left = '200px'
+   document.getElementById('myImage01').innerHTML = 'It went left'
+}">
+
+
+<div id="myDiv01">...</div>

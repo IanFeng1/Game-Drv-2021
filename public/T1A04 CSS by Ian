@@ -1,19 +1,19 @@
 verion 0.0.1</br>
-<h1 aliign=center>T1A04 CSS by Ian </h1>
+<h1 align=center>T1A04 CSS by Ian </h1>
 
 Reference Link
-<a href="https://www.w3schools.com/cssref/default.">w3chools</a><br>
+<a href="https://www.w3schools.com/cssref/default.asp">w3chools</a><br>
 
-Properly donewith a . CSS (Cascading Style Sheets: determine colors
+Properly done with a . css (Cascading Style Sheets: determine colors
 locations extra effects on the tage on your web page)<br>
 
 Here is tyical in document style
 <pre>
 b {
-color: #00ff00;
+  color: #00ff00;
 }
 </pre><br>
-i do CSS inside the tag> It overpowers all other methods<br>
+I do CSS inside the tag. It overpowers all other methods<br>
 
 <b > This is bold</b><br>
 <b id="myB1" style="color:#00ff00; background-Color:blue; "> This is bold</b>

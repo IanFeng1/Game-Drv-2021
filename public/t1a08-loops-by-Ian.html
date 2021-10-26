@@ -41,8 +41,28 @@ Max loops: <input id="myNum01" type=number value="4" ><br>
       for (let myLoop = 0; myLoop < myMax; myLoop++ ){
                                                              
          if (myLoop % 2 == 0){                                                       
+            myTemp += 'Even Number, '
+        }
+        
+        myTemp += 'Loop number: ' + myLoop + '<br>'
+      }
+      document.getElementById('myDiv1').innerHTML = myTemp
+}">
+  
+<input type=button value="odd number identifier" onclick="{
+    document.getElementById('myDiv01').innerHTML = ''
+    let myTemp = ''
+                                                          
+    let myMax = parseInt(document.getElementById('myNUm01').value)
+                                                          
+                                                          
+    for (let myLoop % 2 == 1){
+        myTemp += '<font style=\'color:red:\'> Odd </font>'                                                  
+       }                                                  
+                                                          
+     myTemp += 'Loop number: ' +  myLoop + '<br>'
+    }                                                     
+    document.getElenmentById('myDiv01').innerHTML = myTemp                                                         
+}">                                                             
                                                              
-                                                             
-                                                             
-                                                             
-  <div id="myDiv01">...</div>
+  <div id="myDiv01"><font color=red>...</font></div>

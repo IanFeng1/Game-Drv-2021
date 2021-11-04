@@ -1,0 +1,70 @@
+Version 0.0.1
+
+<h2 align=center>t1a10-Events-by-Ian.htm1</h2>
+
+<a href="https://way2tutorial.com/htm1/htm15_events_handler_list.php">Good refence
+to HTML Events</a><br>
+
+Events are HTML code that activates Javascipt code
+
+<h4> Example Function code</h4>
+<pre>
+&lt input type=button value="Example onClick" onClick="{
+   alert('hi')
+}" &gt
+</pre>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript HTML Events</h2>
+<p>Click the button to display the date.</p>
+
+<button onclick="displayDate()">The time is?</button>
+
+<script>
+function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}
+</script>
+
+<p id="demo"></p>
+
+</body>
+</html> 
+
+<h4> Example working code</h4>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button>
+
+<p id="demo"></p>
+
+</body>
+</html>
+
+
+<input type=text id="myText01" value="3"><br>
+
+<input type=button value="Example onClick" onClick="{
+   document.getElementById('myDiv01').innerHTML =
+document.getElementById('myText01').value
+}">
+
+<div id="myDiv01">...</div>
+
+<b id="myB01" onMouseOut="{
+   document.getElementById('myB01').innerHTML = 'This is bold'
+}"     onMouseOver="{
+   document.getElementById('myB01').innerHTML = 'This is cool'
+}"    > This is bold</b>
+
+<br>
+
+You do at least 8 other events:<br>
+onClieck, onDbClick, onChange, onBlue, onFocus, onMouseMove, onTouch,
+onKeyDown, onKeyPress, onDragStart, onTouchStart, onTouchEnd,onTouchMove

@@ -36,18 +36,6 @@ function displayDate() {
 
 <h4> Example working code</h4>
 
-<!DOCTYPE html>
-<html>
-<body>
-
-<button onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button>
-
-<p id="demo"></p>
-
-</body>
-</html>
-
-
 <input type=text id="myText01" value="3"><br>
 
 <input type=button value="Example onClick" onClick="{

@@ -21,6 +21,27 @@ Functions are used to sensibly organzie code. Then they are "Callled" elsewhere.
 Information can also be passed to functions (that's more advanced).
 
 <h4> Example Functions code</h4>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Functions</h2>
+
+<p>This example calls a function which performs a calculation, and returns the result:</p>
+
+<p id="demo"></p>
+
+<script>
+function myFunction(p1, p2) {
+  return p1 * p2;
+}
+document.getElementById("demo").innerHTML = myFunction(4, 3);
+</script>
+
+</body>
+</html>
+
 </pre>
 function myGraNumber(){
    return parseInt(document.getElementById('myText01').value)

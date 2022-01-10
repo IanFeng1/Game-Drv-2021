@@ -1,0 +1,42 @@
+ver 0.0.1
+
+<body
+onKeyDown="{
+	
+  let myLeft = event.key
+	if (myLeft == 'a'
+	&& parseInt(document.getElementById('myHero01').style.left)>=20
+	&& myBarrierLeft('myHero01','myWall')
+	&& myBarrierLeft('myHero01','myWall2')
+	&& myBarrierLeft('myHero01','myWall3')
+	&& myBarrierLeft('myHero01','myWall4')
+        ) {
+	document.getElementById('myHero01').style.left =
+	parseInt(document.getElementById('myHero01').style.left) -25
+        }
+	if (myLeft == 'a'
+	&& myHitOther('myHero01','myGate')
+	){
+	location = 'https://google.ca'
+	}
+
+
+
+let myUp = event.key
+	if (myUp == 'w'
+	&& parseInt(document.getElementById('myHero01').style.top)>=20
+	&& myBarrierUp('myHero01','myWall')
+	&& myBarrierUp('myHero01','myWall2')
+	&& myBarrierUp('myHero01','myWall3')
+	&& myBarrierUp('myHero01','myWall4')
+) {
+	document.getElementById('myHero01').style.top =
+	parseInt(document.getElementById('myHero01').style.top) -25
+	}
+  
+  
+  
+  
+  
+  
+  

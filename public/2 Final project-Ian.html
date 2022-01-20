@@ -1,0 +1,297 @@
+<script>
+document.myXmove = 10
+document.myYmove = 10
+
+document.mySpeed = 50
+
+document.myTimer = 0;
+
+function myHitOther(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  >  left2  ) &&      	   
+       (bottom1 >  top2   ) &&
+       (left1   <  right2 ) &&
+       (top1    <  bottom2) ){
+       return true
+   }
+}
+
+function myBarrierLeft(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  <=  left2) ||      	   
+       (bottom1 <=  top2) ||
+       (left1   >  right2) ||
+       (top1    >=  bottom2)){
+       return true
+   }
+}
+
+
+function myBarrierRight(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  <  left2) ||      	   
+       (bottom1 <=  top2) ||
+       (left1   >=  right2) ||
+       (top1    >=  bottom2)){
+       return true
+   }
+}
+
+
+function myBarrierUp(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  <=  left2) ||      	   
+       (bottom1 <=  top2) ||
+       (left1   >=  right2) ||
+       (top1    >  bottom2)){
+       return true
+   }
+}
+
+function myBarrierDown(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  <=  left2) ||      	   
+       (bottom1 <  top2) ||
+       (left1   >= right2) ||
+       (top1    >=  bottom2)){
+       return true
+   }
+}
+
+
+function myCheckAll(){
+	if(myHitOther('my1','kill01')){
+	myBadEnd()
+	}
+	if(myHitOther('my1','kill02')){
+	myBadEnd()
+	}
+	if(myHitOther('my1','car01')){
+	myBadEnd()
+	}
+	if(myHitOther('my1','car02')){
+	myBadEnd()
+	}
+	if(myHitOther('my1','snipe01')){
+	myBadEnd()
+	}
+	if(myHitOther('my1','ray01')){
+	myBadEnd()
+	}
+	if(myHitOther('my1','flag01')){
+	document.getElementById('rflag01').style.left =
+	parseInt(document.getElementById('flag01').style.left);
+	document.getElementById('rflag01').style.top =
+	parseInt(document.getElementById('flag01').style.top);
+	document.getElementById('flag01').style.left = '-200px'
+	myNextlevel()
+	}
+	if (parseInt(document.getElementById('car01').style.left) < 10
+	|| parseInt(document.getElementById('car01').style.left) + 120 > window.innerWidth
+	|| myHitOther('car01', 'myBar01')
+	|| myHitOther('car01', 'myBar02')
+	|| myHitOther('car01', 'myBar03')
+	|| myHitOther('car01', 'myBar04')
+	|| myHitOther('car01', 'myBar05')
+	|| myHitOther('car01', 'myBar06')
+	|| myHitOther('car01', 'myBar07')
+	|| myHitOther('car01', 'myBar08')) {
+	document.myXmove = document.myXmove * -1
+	}
+	if (parseInt(document.getElementById('car02').style.top) < 20
+	|| parseInt(document.getElementById('car02').style.top) + 70 > window.innerHeight
+	|| myHitOther('car02', 'myBar01')
+	|| myHitOther('car02', 'myBar02')
+	|| myHitOther('car02', 'myBar03')
+	|| myHitOther('car02', 'myBar04')
+	|| myHitOther('car02', 'myBar05')
+	|| myHitOther('car02', 'myBar06')
+	|| myHitOther('car02', 'myBar07')
+	|| myHitOther('car02', 'myBar08')) {
+	document.myYmove = document.myYmove * -1
+	}
+}
+
+function myBadEnd(){
+	document.getElementById('my1').style.left = -400
+	alert('You failed')
+	}
+
+function myNextlevel(){
+	document.getElementById('my1').style.left = -400
+	alert('You won')
+	}
+
+function myAuto(my1,my2){
+	document.getElementById(my1).style.left = parseInt(document.getElementById(my1).style.left) + document.myXmove
+	document.getElementById(my2).style.top = parseInt(document.getElementById(my2).style.top) + document.myYmove
+	myCheckAll()
+}
+</script>
+
+
+<body
+onLoad="{
+	clearInterval(document.myTimer)                    
+	document.mytimer = setInterval( myAuto, document.mySpeed, 'car01','car02')
+	document.getElementById('flag01').style.left = window.innerWidth - 110
+	document.getElementById('flag01').style.top = window.innerHeight - 110
+	document.getElementById('ray01').style.width = window.innerWidth - 1150
+}"
+
+onKeyDown="{
+	let myLeft = event.key
+	if (myLeft == 'a'
+	&& parseInt(document.getElementById('my1').style.left)>=50
+	&& myBarrierLeft('my1','myBar01')
+	&& myBarrierLeft('my1','myBar02')
+	&& myBarrierLeft('my1','myBar03')
+	&& myBarrierLeft('my1','myBar04')
+	&& myBarrierLeft('my1','myBar05')
+	&& myBarrierLeft('my1','myBar06')
+	&& myBarrierLeft('my1','myBar07')
+	&& myBarrierLeft('my1','myBar08')) {
+	document.getElementById('my1').style.left =
+	parseInt(document.getElementById('my1').style.left) -50
+	myCheckAll()
+	}
+	let myUp = event.key
+	if (myUp == 'w'
+	&& parseInt(document.getElementById('my1').style.top)>=50
+	&& myBarrierUp('my1','myBar01')
+	&& myBarrierUp('my1','myBar02')
+	&& myBarrierUp('my1','myBar03')
+	&& myBarrierUp('my1','myBar04')
+	&& myBarrierUp('my1','myBar05')
+	&& myBarrierUp('my1','myBar06')
+	&& myBarrierUp('my1','myBar07')
+	&& myBarrierUp('my1','myBar08')) {
+	document.getElementById('my1').style.top =
+	parseInt(document.getElementById('my1').style.top) -50
+	myCheckAll()
+	}
+	let myRight = event.key
+	if (myRight == 'd'
+	&& parseInt(document.getElementById('my1').style.left)<=window.innerWidth-100
+	&& myBarrierRight('my1','myBar01')
+	&& myBarrierRight('my1','myBar02')
+	&& myBarrierRight('my1','myBar03')
+	&& myBarrierRight('my1','myBar04')
+	&& myBarrierRight('my1','myBar05')
+	&& myBarrierRight('my1','myBar06')
+	&& myBarrierRight('my1','myBar07')
+	&& myBarrierRight('my1','myBar08')) {
+	document.getElementById('my1').style.left =
+	parseInt(document.getElementById('my1').style.left) +50
+	myCheckAll()
+	}
+	let myDown = event.key
+	if (myRight == 's' 
+	&& parseInt(document.getElementById('my1').style.top)<=window.innerHeight-100
+	&& myBarrierDown('my1','myBar01')
+	&& myBarrierDown('my1','myBar02')
+	&& myBarrierDown('my1','myBar03')
+	&& myBarrierDown('my1','myBar04')
+	&& myBarrierDown('my1','myBar05')
+	&& myBarrierDown('my1','myBar06')
+	&& myBarrierDown('my1','myBar07')
+	&& myBarrierDown('my1','myBar08')) {
+	document.getElementById('my1').style.top =
+	parseInt(document.getElementById('my1').style.top) +50
+	myCheckAll()
+	}
+}">
+
+
+<h1 align=center>Final project-Ian</h1>
+
+<span style="position: absolute; left: 0; top: 0; width: 100; height: 50">Version 0.0.0</span>
+
+<img title="my1" src="12345.jpg" 
+id="my1" style="position: absolute; left: 200; top: 200; width: 50; height: 50">
+
+<img title="kill01" src="1234.jpg"
+ id="kill01" style="position: absolute; left: 300; top: 200; width: 50; height: 50">
+
+<img title="kill02" src="1234.jpg"
+ id="kill02" style="position: absolute; left: 500; top: 450; width: 50; height: 50">
+
+<img title="car01" src="Car01.jpg"
+ id="car01" style="position: absolute; left: 1000; top: 550; width: 100; height: 50">
+
+<img title="car02" src="Car01.jpg"
+ id="car02" style="position: absolute; left: 1150; top: 300; width: 100; height: 50">
+
+<img title="snipe01" src="123.jpg"
+ id="snipe01" style="position: absolute; left: 1000; top: 700; width: 50; height: 50">
+
+<span id="myBar01" title="myBar01" style="position:absolute; left:100; top:100; width: 100; height: 200; background-color: green;">
+</span>
+
+<span id="myBar02" title="myBar02" style="position:absolute; left:300; top:250; width: 700; height: 50; background-color: green;">
+</span>
+
+<span id="myBar03" title="myBar03" style="position:absolute; left:1250; top:0; width: 50; height: 450; background-color: green;">
+</span>
+
+<span id="myBar04" title="myBar04" style="position:absolute; left:300; top:400; width: 800; height: 50; background-color: green;">
+</span>
+
+<span id="myBar05" title="myBar05" style="position:absolute; left:1050; top:350; width: 50; height: 100; background-color: green;">
+</span>
+
+<span id="myBar06" title="myBar06" style="position:absolute; left:100; top:600; width: 300; height: 50; background-color: green;">
+</span>
+
+<span id="myBar07" title="myBar07" style="position:absolute; left:400; top:600; width: 50; height: 100; background-color: green;">
+</span>
+
+<span id="myBar08" title="myBar08" style="position:absolute; left:900; top:450; width: 50; height: 250; background-color: green;">
+</span>
+
+<img src="123456.jpg" 
+id="flag01" style="position: absolute; left: 1000; top: 950; width: 100; height: 100">
+
+<img src="1234567.jpg" 
+id="rflag01" style="position: absolute; left: -100; top: 100; width: 100; height: 100">
+
+<span id="ray01" style="position: absolute; left: 1050; top: 721; width: 100; height: 1; background-color: blue;">
+</span>
+
+<img src="jinhuangfengshou-03816497_3.jpg" width=1800> </span><br>
+</body>
